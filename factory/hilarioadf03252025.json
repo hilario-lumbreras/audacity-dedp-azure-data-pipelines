@@ -1,0 +1,9 @@
+{
+	"name": "hilarioadf03252025",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1b895b80-55fd-4e2a-9873-5344e69d0a45",
+		"tenantId": "abaf2f38-53e6-423c-97bd-458afcea4f3d"
+	}
+}
