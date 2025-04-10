@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 14",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [AgencyName]\n,[FiscalYear]\n,[TotalPaid]\n FROM [dbo].[NYC_Payroll_Summary_Clean]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT \n    [FiscalYear],\n    [AgencyName],\n    [TotalPaid]\nFROM \n    [dbo].[NYC_Payroll_Summary]\nWHERE \n    [FiscalYear] = 2020  -- You can filter by fiscal year or any other column\nORDER BY \n    [AgencyName];\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

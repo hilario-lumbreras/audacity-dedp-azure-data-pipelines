@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 13",
+	"properties": {
+		"content": {
+			"query": "-- Only use this if your external table schema was out of order\nINSERT INTO [dbo].[NYC_Payroll_Summary_Clean] (AgencyName, FiscalYear, TotalPaid)\nSELECT\n    TRY_CAST(FiscalYear AS VARCHAR(100)),    -- actually AgencyName\n    TRY_CAST(AgencyName AS INT),             -- actually FiscalYear\n    TRY_CAST(TotalPaid AS FLOAT)\nFROM [dbo].[NYC_Payroll_Summary_Raw_2]\nWHERE \n    ISNUMERIC(AgencyName) = 1\n    AND AgencyName NOT IN ('FiscalYear')     -- skip header\n    AND FiscalYear NOT IN ('AgencyName');\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

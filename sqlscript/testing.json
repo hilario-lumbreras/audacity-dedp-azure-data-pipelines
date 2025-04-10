@@ -1,0 +1,17 @@
+{
+	"name": "testing",
+	"properties": {
+		"content": {
+			"query": "-- SELECT TOP 10 * FROM [dbo].[NYC_Payroll_Summary];\n\n\n-- SELECT name, format_type\n-- FROM sys.external_file_formats\n-- WHERE name = 'SynapseDelimitedTextFormat';\n\n-- List all tables to check if your master data tables exist\n-- SELECT name\n-- FROM sys.tables\n-- WHERE name IN ('NYC_Payroll_EMP_MD', 'NYC_Payroll_TITLE_MD', 'NYC_Payroll_AGENCY_MD');\n\n-- SELECT name\n-- FROM sys.tables\n-- WHERE name IN ('NYC_Payroll_Data_2020', 'NYC_Payroll_Data_2021');\n\n-- Test with only FiscalYear and AgencyName\nSELECT *\nFROM NYC_Payroll_Summary\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqldedicatedpool1",
+				"poolName": "sqldedicatedpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

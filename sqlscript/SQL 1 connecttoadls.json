@@ -1,0 +1,17 @@
+{
+	"name": "SQL 1 connecttoadls",
+	"properties": {
+		"content": {
+			"query": "\n\n-- Step 1: Create the master key\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = 'YIwilshowoufhwn12345';\nGO\n\n-- Step 2: Create the database-scoped credential to store the SAS token\nIF NOT EXISTS (SELECT * FROM sys.credentials WHERE name = 'MySasCredential')\nBEGIN\n    CREATE DATABASE SCOPED CREDENTIAL MySasCredential\n    WITH IDENTITY = 'SHARED ACCESS SIGNATURE',\n    SECRET = 'sv=2024-11-04&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2025-04-06T01:17:51Z&st=2025-03-26T17:17:51Z&spr=https&sig=De%2BtdbPdKIC92aI%2FvE83gCUZr%2FvfsUZ5XJlasJEA3N8%3D';  -- Use your SAS token here\nEND\nGO\n\n-- Step 3: Create the external data source referencing the created credential\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'mydlsfs20230413_mydls20230413_dfs_core_windows_net')\nBEGIN\n    CREATE EXTERNAL DATA SOURCE [mydlsfs20230413_mydls20230413_dfs_core_windows_net]\n    WITH (\n        TYPE = HADOOP,\n        LOCATION = 'abfss://adlsnycpayroll-hilario-l@udacitystorage3262025.dfs.core.windows.net/',\n        CREDENTIAL = MySasCredential  -- Reference the credential containing the SAS token\n    );\nEND\nGO\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

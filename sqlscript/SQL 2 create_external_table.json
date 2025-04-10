@@ -1,0 +1,17 @@
+{
+	"name": "SQL 2 create_external_table",
+	"properties": {
+		"content": {
+			"query": "CREATE EXTERNAL TABLE [dbo].[NYC_Payroll_Summary] (\n    [FiscalYear] [int] NULL,\n    [AgencyName] [varchar](50) NULL,\n    [TotalPaid] [float] NULL\n)\nWITH (\n    LOCATION = '/dirstaging/',  -- Make sure this points to the correct directory for your files\n    DATA_SOURCE = [mydlsfs20230413_mydls20230413_dfs_core_windows_net],  -- Use the actual data source name\n    FILE_FORMAT = [SynapseDelimitedTextFormat]\n);\nGO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

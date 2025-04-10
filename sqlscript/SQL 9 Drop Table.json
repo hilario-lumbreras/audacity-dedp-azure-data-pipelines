@@ -1,0 +1,17 @@
+{
+	"name": "SQL 9 Drop Table",
+	"properties": {
+		"content": {
+			"query": "DROP TABLE dbo.NYC_Payroll_AGENCY_MD;\nDROP TABLE dbo.NYC_Payroll_Data_2020;\nDROP TABLE dbo.NYC_Payroll_Data_2021;\nDROP TABLE dbo.NYC_Payroll_EMP_MD;\nDROP TABLE dbo.NYC_Payroll_TITLE_MD;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

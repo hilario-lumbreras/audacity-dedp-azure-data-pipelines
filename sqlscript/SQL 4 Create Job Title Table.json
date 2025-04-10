@@ -1,0 +1,17 @@
+{
+	"name": "SQL 4 Create Job Title Table",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE [dbo].[NYC_Payroll_TITLE_MD](\n[TitleCode] [varchar](10) NULL,\n[TitleDescription] [varchar](100) NULL\n)\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqldedicatedpool1",
+				"poolName": "sqldedicatedpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

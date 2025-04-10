@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 6",
+	"properties": {
+		"content": {
+			"query": "CREATE EXTERNAL DATA SOURCE [adlsnycpayroll_hilario_l_udacitystorage3262025_dfs_core_windows_net]\nWITH (\n    LOCATION = 'abfss://adlsnycpayroll-hilario-l@udacitystorage3262025.dfs.core.windows.net/'\n);\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

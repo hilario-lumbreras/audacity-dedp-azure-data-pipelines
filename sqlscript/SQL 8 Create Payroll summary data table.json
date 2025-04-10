@@ -1,0 +1,17 @@
+{
+	"name": "SQL 8 Create Payroll summary data table",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE [dbo].[NYC_Payroll_Summary](\n    [FiscalYear] [int] NULL,\n    [AgencyName] [varchar](50) NULL,\n    [TotalPaid] [float] NULL \n)\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqldedicatedpool1",
+				"poolName": "sqldedicatedpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

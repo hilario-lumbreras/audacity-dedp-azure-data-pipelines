@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 9",
+	"properties": {
+		"content": {
+			"query": "SELECT\n    TRY_CAST(AgencyName AS VARCHAR(100)) AS AgencyName,\n    TRY_CAST(FiscalYear AS INT) AS FiscalYear,\n    TRY_CAST(TotalPaid AS FLOAT) AS TotalPaid\nFROM [dbo].[NYC_Payroll_Summary_Raw_2]\nWHERE \n    ISNUMERIC(FiscalYear) = 1\n    AND TRY_CAST(FiscalYear AS INT) IS NOT NULL;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

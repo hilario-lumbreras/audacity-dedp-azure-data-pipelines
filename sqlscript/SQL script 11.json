@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 11",
+	"properties": {
+		"content": {
+			"query": "INSERT INTO [dbo].[NYC_Payroll_Summary] (AgencyName, FiscalYear, TotalPaid)\nSELECT\n    AgencyName,\n    TRY_CAST(FiscalYear AS INT),\n    TRY_CAST(TotalPaid AS FLOAT)\nFROM [dbo].[NYC_Payroll_Summary_Raw_2]\nWHERE \n    ISNUMERIC(FiscalYear) = 1\n    AND FiscalYear NOT IN ('FiscalYear')  -- Skip header rows\n    AND AgencyName NOT IN ('AgencyName')  -- Just in case\n    AND TotalPaid NOT IN ('TotalPaid');   -- Just in case\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

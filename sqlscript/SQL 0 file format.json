@@ -1,0 +1,17 @@
+{
+	"name": "SQL 0 file format",
+	"properties": {
+		"content": {
+			"query": "-- Use the same file format as used for creating the External Tables during the LOAD step.\nIF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') \nCREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] \nWITH ( FORMAT_TYPE = DELIMITEDTEXT ,\nFORMAT_OPTIONS (\nFIELD_TERMINATOR = ',',\nUSE_TYPE_DEFAULT = FALSE\n))\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpool_00",
+				"poolName": "sqlpool_00"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
